@@ -12,14 +12,20 @@ This will give you a url for the localhost that is this project. As long as the 
 
 ## GULP
 
-Install dependencies
+1. Install dependencies:
 
 ```bash
 npm install
 ```
 
-Run Gulp
+2. Run Gulp:
 
 ```bash
 gulp
+```
+
+Note: to run the ```gulp``` command, you need gulp installed globally on your computer:
+
+```bash
+npm install gulp -g
 ```

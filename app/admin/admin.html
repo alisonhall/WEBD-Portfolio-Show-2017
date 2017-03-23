@@ -2,9 +2,9 @@
 <html>
 
 <head>
-	<meta charset=utf-8 />
+	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Email/Password Authentication Example</title>
+	<title>WEBD Portfolio Show Admin Console</title>
 	<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
 	<link rel="stylesheet" href="main.css">
 </head>
@@ -28,75 +28,145 @@
 		<button id="sign-out" name="signin">Sign Out</button>
 		<button id="password-reset2" name="verify-email">Send Password Reset Email</button>
 	</div>
+
+	<div id="users-list">
+		<p>Users List</p>
+	</div>
+
 	<!-- Container where we'll display the user details -->
 	<div id="user-details-container">
 		<div id="loading">Loading...</div>
 		<form id="account-details">
-			<div>
-				<label for="first-name">First Name:</label>
-				<input type="text" id="first-name" name="first-name">
-			</div>
-			<div>
-				<label for="last-name">Last Name:</label>
-				<input type="text" id="last-name" name="last-name">
-			</div>
-			<div>
-				<label for="photo-URL">Photo URL:</label>
-				<input type="text" id="photo-URL" name="photo-URL">
-			</div>
-			<div>
-				<label for="introduction">Introduction:</label>
-				<textarea name="introduction" id="introduction" cols="30" rows="10"></textarea>
-			</div>
-			<div>
-				<label for="skill-set">Skill Set:</label>
-				<input type="text" id="skill-set" name="skill-set">
-			</div>
-			<div>
-				<label for="portfolio-link">Portfolio Link:</label>
-				<input type="text" id="portfolio-link" name="portfolio-link">
-			</div>
-			<div>
-				<label for="official-email">Official Email:</label>
-				<input type="text" id="official-email" name="official-email">
-			</div>
-			<p>Enter url's for a max. of 3 from the following social media accounts:</p>
-			<div>
-				<label for="linkedin">LinkedIn:</label>
-				<input type="text" id="linkedin" name="linkedin">
-			</div>
-			<div>
-				<label for="github">GitHub:</label>
-				<input type="text" id="github" name="github">
-			</div>
-			<div>
-				<label for="dribbble">Dribbble:</label>
-				<input type="text" id="dribbble" name="dribbble">
-			</div>
-			<div>
-				<label for="instagram">Instagram:</label>
-				<input type="text" id="instagram" name="instagram">
-			</div>
-			<div>
-				<label for="behance">Behance:</label>
-				<input type="text" id="behance" name="behance">
-			</div>
-			<div>
-				<label for="twitter">Twitter:</label>
-				<input type="text" id="twitter" name="twitter">
-			</div>
-			<div>
-				<label for="codepen">Codepen:</label>
-				<input type="text" id="codepen" name="codepen">
-			</div>
-			<div>
-				<label for="facebook">Facebook:</label>
-				<input type="text" id="facebook" name="facebook">
-			</div>
-			<div class="user-buttons">
-				<button type="submit" id="save-data">Save</button>
-				<button id="cancel">Cancel</button>
-			</div>
+			<fieldset class="personal-info">
+				<legend>Personal Info</legend>
+				<div>
+					<label for="first-name">First Name:</label>
+					<input type="text" id="first-name" name="first-name">
+				</div>
+				<div>
+					<label for="last-name">Last Name:</label>
+					<input type="text" id="last-name" name="last-name">
+				</div>
+				<div>
+					<label for="skill-set">Skill Set:</label>
+					<input type="text" id="skill-set" name="skill-set" placeholder="Developer/Designer/Hybrid">
+				</div>
+				<div>
+					<label for="portfolio-link">Portfolio Link:</label>
+					<input type="text" id="portfolio-link" name="portfolio-link">
+				</div>
+				<div>
+					<label for="introduction">Introduction/ Bio:<br><span class="side-note">(Max. 300 characters)</span></label>
+					<textarea name="introduction" id="introduction" cols="30" rows="10" maxlength="300"></textarea>
+				</div>
+			</fieldset>
+			<fieldset class="photos">
+				<legend>Photos</legend>
+				<p>Note: the Photo Filenames can only be edited by the administrator</p>
+				<div>
+					<label for="photo-URL">Photo Filename:</label>
+					<input type="text" id="photo-URL" name="photo-URL" disabled>
+				</div>
+				<div>
+					<label for="thumbnail-photo-URL">Thumbnail Photo Filename:</label>
+					<input type="text" id="thumbnail-photo-URL" name="thumbnail-photo-URL" disabled>
+				</div>
+				<br>
+				<div class="mainPhoto">
+					<p>Main Photo:</p>
+					<img src="../images/placeholder.png" alt="main photo of user" id="photo">
+				</div>
+				<div class="thumbnailPhoto">
+					<p>Thumbnail Photo:</p>
+					<img src="../images/placeholder.png" alt="thumbnail photo of user" id="thumbnail-photo">
+				</div>
+			</fieldset>
+
+			<fieldset class="social-media">
+				<legend>Social Media</legend>
+				<p>Choose the 3 Social Media accounts you want to link:</p>
+				<div>
+					<label for="social-media-1">1st Choice: </label>
+					<select name="social-media-1" id="social-media-1" >
+						<option value="" disabled selected="selected" hidden>Choose an account type...</option>
+						<option value="linkedin">LinkedIn</option>
+						<option value="github">GitHub</option>
+						<option value="dribbble">Dribble</option>
+						<option value="instagram">Instagram</option>
+						<option value="behance">Behance</option>
+						<option value="twitter">Twitter</option>
+						<option value="codepen">CodePen</option>
+						<option value="facebook">Facebook</option>
+					</select>
+				</div>
+				<div>
+					<label for="social-media-2">2nd Choice: </label>
+					<select name="social-media-2" id="social-media-2">
+						<option value="" disabled selected="selected" hidden>Choose an account type...</option>
+						<option value="linkedin">LinkedIn</option>
+						<option value="github">GitHub</option>
+						<option value="dribbble">Dribble</option>
+						<option value="instagram">Instagram</option>
+						<option value="behance">Behance</option>
+						<option value="twitter">Twitter</option>
+						<option value="codepen">CodePen</option>
+						<option value="facebook">Facebook</option>
+					</select>
+				</div>
+				<div>
+					<label for="social-media-3">3rd Choice: </label>
+					<select name="social-media-3" id="social-media-3">
+						<option value="" disabled selected="selected" hidden>Choose an account type...</option>
+						<option value="linkedin">LinkedIn</option>
+						<option value="github">GitHub</option>
+						<option value="dribbble">Dribble</option>
+						<option value="instagram">Instagram</option>
+						<option value="behance">Behance</option>
+						<option value="twitter">Twitter</option>
+						<option value="codepen">CodePen</option>
+						<option value="facebook">Facebook</option>
+					</select>
+				</div>
+				<br>
+				<br>
+				<p>Enter the URLs for the social media that you chose:</p>
+				<div>
+					<label for="linkedin">LinkedIn:</label>
+					<input type="text" id="linkedin" name="linkedin">
+				</div>
+				<div>
+					<label for="github">GitHub:</label>
+					<input type="text" id="github" name="github">
+				</div>
+				<div>
+					<label for="dribbble">Dribbble:</label>
+					<input type="text" id="dribbble" name="dribbble">
+				</div>
+				<div>
+					<label for="instagram">Instagram:</label>
+					<input type="text" id="instagram" name="instagram">
+				</div>
+				<div>
+					<label for="behance">Behance:</label>
+					<input type="text" id="behance" name="behance">
+				</div>
+				<div>
+					<label for="twitter">Twitter:</label>
+					<input type="text" id="twitter" name="twitter">
+				</div>
+				<div>
+					<label for="codepen">Codepen:</label>
+					<input type="text" id="codepen" name="codepen">
+				</div>
+				<div>
+					<label for="facebook">Facebook:</label>
+					<input type="text" id="facebook" name="facebook">
+				</div>
+				<div class="user-buttons">
+					<button type="submit" id="save-data">Save</button>
+					<button id="cancel">Cancel</button>
+				</div>
+			</fieldset>
 		</form>
 	</div>
 	<script src="script.js"></script>

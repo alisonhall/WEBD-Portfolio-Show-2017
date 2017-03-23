@@ -30,6 +30,7 @@ li a {
 
 #account-details,
 #signed-in-container,
+#users-list,
 #user-details-container {
 	display: none;
 }
@@ -48,13 +49,23 @@ button {
 	font-weight: 500;
 	text-transform: uppercase;
 	text-align: center;
-	line-height: 36px;
+	line-height: 1em;
 }
 
 button:hover,
 button:active {
 	background-color: rgba(158, 158, 158, .4);
 	cursor: pointer;
+}
+
+#save-data {
+	background-color: #526df2;
+	color: white;
+}
+
+#save-data:hover,
+#save-data:active {
+	background-color: #1d3298;
 }
 
 h1 {
@@ -64,13 +75,13 @@ h1 {
 }
 
 h2 {
-	color: #187D9E;
+	color: #1d3298;
 	margin-top: 100px;
 	text-align: center;
 }
 
 header {
-	background-color: #187D9E;
+	background-color: #1d3298;
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -78,46 +89,74 @@ header {
 }
 
 input {
-	display: inline;
-	width: auto;
-	min-width: 50px;
 	height: 30px;
-	margin: 2px;
-	padding: 0 3px;
+	padding: 0px 5px;
+	font-size: 0.8em;
 }
 
 textarea {
-	display: inline;
-	width: auto;
-	min-width: 50px;
-	margin: 2px;
-	padding: 0 3px;
+	padding: 6px 5px;
+	overflow: scroll;
+}
+
+form fieldset {
+	text-align: center;
+}
+
+form legend {
+	text-align: left;
+	color: #db3069;
 }
 
 form input,
 form textarea {
+	display: inline;
+	width: auto;
+	min-width: 50px;
 	float: left;
+	margin: 2px;
 	width: 70%;
+	border-color: rgb(238, 238, 238);
+	border-style: inset;
+	border-width: 1px;
+	font-size: 0.8em;
 }
 
 form label {
-	display: block;
+	display: inline-block;
 	min-width: 50px;
 	width: 25%;
 	float: left;
 	text-align: right;
+	line-height: 1em;
+	min-height: 25px;
+	padding-top: 10px;
+	font-weight: 300;
+}
+
+form select {
+	text-align: left;
+	width: 68%;
+	height: 34px;
+	background-color: white;
+	font-size: 0.8em;
+	float: left;
+	margin: 2px;
 }
 
 form div {
 	clear: both;
+	height: 30px;
 }
 
 form p {
 	display: block;
+	text-align: left;
 }
 
 #sign-in-container,
 #signed-in-container,
+#users-list,
 #user-details-container {
 	background-color: #fafafa;
 	-webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);
@@ -144,9 +183,59 @@ form p {
 
 .user-buttons {
 	text-align: right;
+	min-height: 50px;
 }
 
 #email,
 #password {
 	width: 45%;
+}
+
+.mainPhoto,
+.thumbnailPhoto {
+	display: inline-block;
+	text-align: center;
+}
+
+.mainPhoto p,
+.thumbnailPhoto p {
+	text-align: center;
+}
+
+#photo {
+	width: 100%;
+	max-width: 250px;
+}
+
+#thumbnail-photo {
+	width: 100%;
+	max-width: 100px;
+}
+
+.selectedUser {
+	background: #526df2;
+	color: white;
+}
+
+.selectedUser:hover,
+.selectedUser:active {
+	background-color: #1d3298;
+}
+
+.side-note {
+	font-size: 0.8em;
+}
+
+.photos div {
+	min-height: 40px;
+}
+
+@media screen and (max-width: 500px) {
+	form label,
+	form input,
+	form textarea,
+	form select {
+		width: 95%;
+		text-align: left;
+	}
 }
