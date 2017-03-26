@@ -19,22 +19,20 @@ header nav li {
     display: inline-block;
     text-decoration: none;
     padding: 5px 10px;
+    position: relative;
 }
 
 header nav .selected a,
 header nav a:hover,
 header nav a:active,
 header nav a:focus {
-    text-decoration: line-through;
-    color: #DB3069;
+    border-bottom: 3px solid #DB3069;
+    color: white;
 }
 
 header nav a {
     text-decoration: none;
-}
-
-header nav a span {
-    color: white !important;
+    color: white;
 }
 
 .parallax>use {
