@@ -1,39 +1,33 @@
 // Initialize Firebase
 var config = {
-	apiKey: "AIzaSyANKO5LqddgASdkSG2WzcPXLPQ41AkewPo",
-	authDomain: "webd-portfolio-show-2017.firebaseapp.com",
-	databaseURL: "https://webd-portfolio-show-2017.firebaseio.com",
-	storageBucket: "webd-portfolio-show-2017.appspot.com",
-	messagingSenderId: "888183054325"
+    apiKey: "AIzaSyANKO5LqddgASdkSG2WzcPXLPQ41AkewPo",
+    authDomain: "webd-portfolio-show-2017.firebaseapp.com",
+    databaseURL: "https://webd-portfolio-show-2017.firebaseio.com",
+    storageBucket: "webd-portfolio-show-2017.appspot.com",
+    messagingSenderId: "888183054325"
 };
-firebase.initializeApp(config);
-var data;
 
-function getData() {
-	firebase.database().ref('/users/').on('value', function(snapshot) {
-		data = snapshot.val();
-		var $people = $('#people');
-		var textHtml = '<ul>';
+var firebaseApp = firebase.initializeApp(config)
+var db = firebaseApp.database()
 
-		if(data !== null) {
-			for (var item in data) {
-				console.log(data[item]);
-				var firstName = data[item].firstName;
-				var lastName = data[item].lastName;
-				textHtml += '<li>' + firstName + ' ' + lastName + '</li>';
-			}
-		}
+var vm = new Vue({
+    el: "#people",
+    firebase: {
+        // can bind to either a direct Firebase reference or a query
+        items: db.ref("users")
+    },
+});
 
-		textHtml += '</ul>';
 
-		$people.html(textHtml);
-	});
-}
-
-function initApp() {
-	getData();
-}
-
-window.onload = function() {
-	initApp();
-};
+setTimeout(function () {
+    var mySwiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        paginationBulletRender: function (swiper, index, className) {
+            return '<span class="custom-bullet ' + className + '"></span>';
+        }
+    })
+}, 500);
