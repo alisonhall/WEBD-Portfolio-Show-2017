@@ -2,60 +2,83 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SHIFT 2017</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
-	<link rel="stylesheet" href="css/main.css">
-	<script src="https://use.fontawesome.com/5b0bf816fc.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SHIFT 2017</title>
+    <link href="https://fonts.googleapis.com/css?family=Ek+Mukta|Montserrat:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <script src="https://use.fontawesome.com/5b0bf816fc.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
 </head>
 
 <body>
-	<header>
-		<a href="index.html"><img src="images/logo--colored.svg" alt="Shift 2017 Logo"></a>
-		<nav>
-			<ul>
-				<li class="selected"><a href="#home">Home</a></li>
-				<li><a href="#event">Event</a></li>
-				<li><a href="#squad">Squad</a></li>
-				<li><a href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599">RSVP</a></li>
-			</ul>
-		</nav>
-	</header>
-	
-	<section id="home">
-		<div class="left">
-			<img src="images/logo--colored.svg" alt="">
-		</div>
-		<div class="right">
-			<h1>5 <span class="pink">TO</span> 8 PM</h1>
-			<h2><span class="underline">tuesday april 25</span></h2>
-			<div class="margin">
-				<h2><span class="underline">the burroughes building</span></h2>
-				<p>639 queen st w. toronto, on m5v 2b7</p>
-			</div>
-			<h3>humber college</h3>
-			<h4>web design + interactive media</h4>
-			<h4>class of 2017 grad show</h4>
-			<div class="links">
-				<a href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599" class="rsvp">RSVP</a>
-				<a href="https://www.facebook.com/HumberInteractive/" class="social facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-				<a href="https://twitter.com/humberdigital?lang=en" class="social twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-				<a href="https://www.linkedin.com/groups/4414270" class="social linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-			</div>
-		</div>
-	</section>
+    <header>
+        <a href="index.html"><img src="images/logo--colored.svg" alt="Shift 2017 Logo"></a>
+        <nav>
+            <ul>
+                <li class="selected"><a href="#home">Home</a></li>
+                <li><a href="#event">Event</a></li>
+                <li><a href="#squad">Squad</a></li>
+                <li><a href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599">RSVP</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<section id="event">
-	</section>
+    <section id="home">
+        <div class="left">
+            <img src="images/logo--colored.svg" alt="">
+        </div>
+        <div class="right">
+            <h1>5 <span class="pink">TO</span> 8 PM</h1>
+            <h2><span class="underline">tuesday april 25</span></h2>
+            <div class="margin">
+                <h2><span class="underline">the burroughes building</span></h2>
+                <p>639 queen st w. toronto, on m5v 2b7</p>
+            </div>
+            <h3>humber college</h3>
+            <h4>web design + interactive media</h4>
+            <h4>class of 2017 grad show</h4>
+            <div class="links">
+                <a href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599" class="rsvp">RSVP</a>
+                <a href="https://www.facebook.com/HumberInteractive/" class="social facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/humberdigital?lang=en" class="social twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/groups/4414270" class="social linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </section>
 
-	<section id="squad">
-		<div id="people"></div>
-	</section>
 
-	<svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+
+    <section id="event">
+    </section>
+    <section id="squad">
+        <!-- Slider main container -->
+        <div class="swiper-container" id="people">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div v-for="person in items" class="swiper-slide">
+                   <div :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" class="student-image"></div>
+                    <div class="student-info">
+                        <h1>{{ person.firstName }} {{ person.lastName }}</h1>
+                        <h3>{{ person.skillSet }}</h3>
+                        <p>{{ person.introduction }}</p>
+                    </div>
+                </div>
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </section>
+
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
 		<defs>
 			<path id="gentle-wave" d="m -160,44.4 c 30,0 58,
 		-18 87.7,-18 30.3,0 58.3,
@@ -70,9 +93,11 @@
 		</g>
 	</svg>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="js/firebase.js"></script>
-	<script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
