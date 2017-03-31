@@ -57,23 +57,134 @@
     </section>
     <section id="squad">
         <!-- Slider main container -->
-        <div class="swiper-container" id="people">
+        <div class="swiper-container main-slider" id="people">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div v-for="person in items" class="swiper-slide">
-                   <div :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" class="student-image"></div>
+                <div v-for="person in items" class="swiper-slide main-slide">
+                    <div :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" class="student-image"></div>
                     <div class="student-info">
                         <h1>{{ person.firstName }} {{ person.lastName }}</h1>
                         <h3>{{ person.skillSet }}</h3>
                         <p>{{ person.introduction }}</p>
+                        <div class="student-links">
+                            <a :href="person.portfolioLink" class="button">View Portfolio</a>
+                            <div class="social-links">
+
+                                <!--FIRST SOCIAL MEDIA ICON-->
+
+                                <a :href="person.linkedin" v-if="person.socialMedia1 == 'linkedin'">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.codepen" v-if="person.socialMedia1 == 'codepen'">
+                                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.instagram" v-if="person.socialMedia1 == 'instagram'">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.github" v-if="person.socialMedia1 == 'github'">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.dribble" v-if="person.socialMedia1 == 'dribble'">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.behance" v-if="person.socialMedia1 == 'behance'">
+                                    <i class="fa fa-behance" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.facebook" v-if="person.socialMedia1 == 'facebook'">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.codepen" v-if="person.socialMedia1 == 'codepen'">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+
+                                <!--SECOND SOCIAL MEDIA ICON-->
+
+                                <a :href="person.linkedin" v-if="person.socialMedia2 == 'linkedin'">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.codepen" v-if="person.socialMedia2 == 'codepen'">
+                                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.instagram" v-if="person.socialMedia2 == 'instagram'">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.github" v-if="person.socialMedia2 == 'github'">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.dribble" v-if="person.socialMedia2 == 'dribble'">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.behance" v-if="person.socialMedia2 == 'behance'">
+                                    <i class="fa fa-behance" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.facebook" v-if="person.socialMedia2 == 'facebook'">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.twitter" v-if="person.socialMedia2 == 'twitter'">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+
+                                <!--THIRD SOCIAL MEDIA ICON-->
+
+                                <a :href="person.linkedin" v-if="person.socialMedia3 == 'linkedin'">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.codepen" v-if="person.socialMedia3 == 'codepen'">
+                                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.instagram" v-if="person.socialMedia3 == 'instagram'">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.github" v-if="person.socialMedia3 == 'github'">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.dribble" v-if="person.socialMedia3 == 'dribble'">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.behance" v-if="person.socialMedia3 == 'behance'">
+                                    <i class="fa fa-behance" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.facebook" v-if="person.socialMedia3 == 'facebook'">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.twitter" v-if="person.socialMedia3 == 'twitter'">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                ...
             </div>
             <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
 
+
+            <div class="thumbnails">
+                    <div v-for="person in items" class="thumbnail"></div>
+            </div>
+
+<!--            <div class="swiper-pagination"></div>-->
         </div>
     </section>
 

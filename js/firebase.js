@@ -15,19 +15,26 @@ var vm = new Vue({
     firebase: {
         // can bind to either a direct Firebase reference or a query
         items: db.ref("users")
-    },
+    }
 });
 
 
 setTimeout(function () {
-    var mySwiper = new Swiper('.swiper-container', {
+    var firstSlide = Math.floor(Math.random() * 17)
+    var mainSlider = new Swiper('.main-slider', {
         // Optional parameters
+        initialSlide: firstSlide,
         direction: 'horizontal',
         loop: true,
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        paginationBulletRender: function (swiper, index, className) {
-            return '<span class="custom-bullet ' + className + '"></span>';
-        }
+        keyboardControl: true,
+        shortSwipes: false,
     })
+
+
+    $('.thumbnail').on('click', function () {
+        $('.thumbnail').removeClass('thumb-active')
+        mainSlider.slideTo($(this).index());
+        $(this).addClass('thumb-active')
+    });
+
 }, 500);
