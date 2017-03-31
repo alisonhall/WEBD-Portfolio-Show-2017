@@ -20,14 +20,18 @@ var vm = new Vue({
 
 
 setTimeout(function () {
+    
+    $('.swiper-container').css('opacity', '1')
+    
     var firstSlide = Math.floor(Math.random() * 17)
     var mainSlider = new Swiper('.main-slider', {
         // Optional parameters
         initialSlide: firstSlide,
         direction: 'horizontal',
-        loop: true,
         keyboardControl: true,
         shortSwipes: false,
+        noSwipingClass: 'thumbnails',
+        speed: 600,
     })
 
 

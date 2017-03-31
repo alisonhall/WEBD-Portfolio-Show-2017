@@ -273,6 +273,8 @@ section>div {
 
 .swiper-container {
     width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
 }
 
 .main-slide {
@@ -374,16 +376,31 @@ section>div {
     height: 100% !important;
     background-color: #edeff7;
     transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.thumbnail h6 {
+    display: inline-block;
+    align-self: center;
+    font-size: 1rem;
+    color: #303030;
+    transition: all 0.4s ease;
 }
 
 .thumbnail:hover {
     background-color: #526df2
 }
 
+
 .thumb-active {
     background-color: #DB3069;
 }
 
+.thumbnail:hover h6,
+.thumb-active h6 {
+    color: #edeff7;
+}
 
 /*prevent many large-by-comparison ripples by shrinking the height*/
 

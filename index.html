@@ -181,7 +181,9 @@
 
 
             <div class="thumbnails">
-                    <div v-for="person in items" class="thumbnail"></div>
+                <div v-for="person in items" class="thumbnail">
+                    <h6>{{ person.firstName }}</h6>        
+                </div>
             </div>
 
 <!--            <div class="swiper-pagination"></div>-->
