@@ -7,8 +7,6 @@ body {
     overflow: hidden;
 }
 
-
-
 header {
     position: fixed;
     width: 100%;
@@ -138,7 +136,7 @@ body {
 section {
     float: left;
     display: flex;
-    height: 100%;
+    height: 100vh;
 /*    padding: 75px 0 0 0;*/
     margin: 0;
 }
@@ -273,10 +271,6 @@ section>div {
     transition: all 0.4s ease-out
 }
 
-#squad {
-    /*    padding-top: 20vh*/
-}
-
 .button:hover {
     background: #526df2;
 }
@@ -296,9 +290,9 @@ section>div {
     align-items: flex-start;
     position: absolute;
     top: 0;
-    width: 100%;
     height: 100vh;
-    padding-top: 8vh
+    padding-top: 8vh;
+    width:  100%
 }
 
 .large-text {
@@ -309,7 +303,8 @@ section>div {
     color: #1e2756;
     text-shadow: -3px 4px 20px rgba(0,0,0,0.05),
                 -5px 8px 13px rgba(0,0,0,0.051);
-    z-index: 0;   
+    z-index: 0;
+    width: 100%;
 }
 
 .student-info,

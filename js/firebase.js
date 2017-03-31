@@ -20,7 +20,6 @@ var vm = new Vue({
 
 
 setTimeout(function () {
-    console.log('slider initialized');
     $('.swiper-container').css('opacity', '1')
     
     var firstSlide = Math.floor(Math.random() * 17)
@@ -35,7 +34,6 @@ setTimeout(function () {
     })
 
     $('.thumbnail').click(function () {
-        console.log('clicked')
         $('.thumbnail').removeClass('thumb-active')
         mainSlider.slideTo($(this).index());
         $(this).addClass('thumb-active')
