@@ -42,3 +42,5 @@ setTimeout(function () {
     });
 
 }, 500);
+
+$('section').horizon({swipe: false});
