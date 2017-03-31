@@ -41,7 +41,7 @@ setTimeout(function () {
         $(this).addClass('thumb-active')
     });
     
-}, 500);
+}, 1000);
 
 
 
