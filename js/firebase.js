@@ -34,15 +34,16 @@ setTimeout(function () {
         speed: 600,
     })
 
-
-    $('.thumbnail').on('click', function () {
+    $('.thumbnail').click(function () {
         console.log('clicked')
         $('.thumbnail').removeClass('thumb-active')
         mainSlider.slideTo($(this).index());
         $(this).addClass('thumb-active')
     });
-
+    
 }, 500);
+
+
 
 $('section').horizon({
     swipe: false
