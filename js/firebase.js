@@ -28,7 +28,7 @@ setTimeout(function () {
         // Optional parameters
         initialSlide: firstSlide,
         direction: 'horizontal',
-        keyboardControl: true,
+        keyboardControl: false,
         shortSwipes: false,
         noSwipingClass: 'thumbnails',
         speed: 600,
@@ -43,4 +43,6 @@ setTimeout(function () {
 
 }, 500);
 
-$('section').horizon({swipe: false});
+$('section').horizon({
+    swipe: false
+});

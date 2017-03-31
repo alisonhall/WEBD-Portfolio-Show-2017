@@ -57,11 +57,14 @@
     </section>
     <section data-role="section" id="squad section-section3">
         <!-- Slider main container -->
-        <div class="swiper-container main-slider" id="people">
+        <div class="swiper-container main-slider" id="people" v-cloak>
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div v-for="person in items" class="swiper-slide main-slide">
+                    <div class="large-text-container">
+                        <h1 class="large-text">{{ person.firstName }} {{ person.lastName }}</h1>
+                    </div>
                     <div :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" class="student-image"></div>
                     <div class="student-info">
                         <h1>{{ person.firstName }} {{ person.lastName }}</h1>
