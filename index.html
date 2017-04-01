@@ -184,7 +184,7 @@
 
 
             <div class="thumbnails">
-                <div v-for="person in items" class="thumbnail">
+                <div v-for="person in items" class="thumbnail" :style="{ 'background-image': 'url(images/' + person.thumbnailPhotoURL + ')' }">
                     <h6>{{ person.firstName }}</h6>        
                 </div>
             </div>

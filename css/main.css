@@ -137,7 +137,7 @@ section {
     float: left;
     display: flex;
     height: 100vh;
-/*    padding: 75px 0 0 0;*/
+    /*    padding: 75px 0 0 0;*/
     margin: 0;
 }
 
@@ -292,7 +292,7 @@ section>div {
     top: 0;
     height: 100vh;
     padding-top: 8vh;
-    width:  100%
+    width: 100%
 }
 
 .large-text {
@@ -301,8 +301,7 @@ section>div {
     padding: 5%;
     font-size: 14rem;
     color: #1e2756;
-    text-shadow: -3px 4px 20px rgba(0,0,0,0.05),
-                -5px 8px 13px rgba(0,0,0,0.051);
+    text-shadow: -3px 4px 20px rgba(0, 0, 0, 0.05), -5px 8px 13px rgba(0, 0, 0, 0.051);
     z-index: 0;
     width: 100%;
 }
@@ -405,33 +404,53 @@ section>div {
 .thumbnail {
     width: 20%;
     height: 100% !important;
+    position: relative;
     background-color: #edeff7;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
     transition: all 0.4s ease;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
-.thumbnail h6 {
-    display: inline-block;
-    align-self: center;
-    font-size: 1rem;
-    color: #303030;
+.thumbnail::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    mix-blend-mode: multiply;
     transition: all 0.4s ease;
 }
 
-.thumbnail:hover {
-    background-color: #526df2
+.thumbnail h6 {
+    text-transform: uppercase;
+    display: inline-block;
+    align-self: center;
+    font-size: 1.5rem;
+    color: #303030;
+    transition: all 0.4s ease;
+    opacity: 0;
 }
 
-
-.thumb-active {
+.thumb-active::after {
     background-color: #DB3069;
+}
+
+.thumbnail:hover::after {
+    background-color: #526df2;
 }
 
 .thumbnail:hover h6,
 .thumb-active h6 {
+    opacity: 1;
     color: #edeff7;
 }
+
 
 /*prevent many large-by-comparison ripples by shrinking the height*/
 
