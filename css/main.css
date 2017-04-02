@@ -296,10 +296,11 @@ section>div {
 }
 
 .large-text {
+    text-transform: uppercase;
     display: inline-block;
     margin: 0;
     padding: 5%;
-    font-size: 14rem;
+    font-size: 12rem;
     color: #1e2756;
     text-shadow: -3px 4px 20px rgba(0, 0, 0, 0.05), -5px 8px 13px rgba(0, 0, 0, 0.051);
     z-index: 0;
