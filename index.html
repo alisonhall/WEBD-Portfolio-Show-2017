@@ -23,7 +23,7 @@
                 <li class="selected"><a href="#section-section1">Home</a></li>
                 <li><a href="#section-section2">Event</a></li>
                 <li><a href="#section-section3">Squad</a></li>
-                <li><a href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599">RSVP</a></li>
+                <li><a class="eventbrite-link" href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599">RSVP</a></li>
             </ul>
         </nav>
     </header>
@@ -54,6 +54,25 @@
 
 
     <section data-role="section" id="section-section2">
+        <div class="event-top">
+            <h3>Event Details</h3>
+            <div class="event-left">
+               <h4>WHERE</h4>
+               <div class="event-p">
+                   <p>THE BURROUGHES BUILDING</p>
+                   <p>639 QUEEN ST W, TORONTO, ON</p>
+                   <p>M5V 2B7</p>
+               </div>
+            </div>
+            <div class="event-right">
+               <h4>WHEN</h4>
+               <div class="event-p">
+                   <p>APRIL 25TH 2017</p>
+                   <p>5PM - 8PM</p>
+               </div>
+            </div>
+        </div>
+        <div id="map" class="map"></div>
     </section>
     <section data-role="section" id="section-section3">
         <!-- Slider main container -->
@@ -210,6 +229,22 @@
 	</svg>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFOXCZYCpBkNRnA3pkCXjlflftZAPwMH4&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var uluru = {lat: 43.647233, lng: -79.403389};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: uluru,
+                styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
     <script src="js/jquery.horizonScroll.js"></script>
     <script src="js/firebase.js"></script>
