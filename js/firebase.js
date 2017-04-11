@@ -10,12 +10,24 @@ var config = {
 var firebaseApp = firebase.initializeApp(config)
 var db = firebaseApp.database()
 
+var data = []
+firebase.database().ref('users').orderByChild("lastName").on('child_added', function(snapshot) {
+	data.push(snapshot.val());
+});
+console.log(data);
+
 var vm = new Vue({
     el: "#people",
-    firebase: {
-        // can bind to either a direct Firebase reference or a query
-        items: db.ref("users")
-    }
+    
+//    firebase: {
+//        // can bind to either a direct Firebase reference or a query
+//        items: db.ref("users")
+//    },
+    
+    data: {
+        items: data
+    },
+    
 });
 
 
@@ -25,6 +37,8 @@ setTimeout(function () {
     var firstSlide = Math.floor(Math.random() * 17)
     var mainSlider = new Swiper('.main-slider', {
         // Optional parameters
+        loop: true,
+        loopedSlides: 18,
         initialSlide: firstSlide,
         direction: 'horizontal',
         keyboardControl: false,
@@ -33,20 +47,25 @@ setTimeout(function () {
         speed: 600,
     })
 
-    $('.thumbnail').click(function () {
-        $('.thumbnail').removeClass('thumb-active')
-        mainSlider.slideTo($(this).index());
-        $(this).addClass('thumb-active')
+    var thumbnailSlider = new Swiper('.thumbnails', {
+        slideActiveClass: 'thumb-active',
+        initialSlide: firstSlide,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        loop: true,
+        loopedSlides: 18,
+        touchRatio: 0.2,
+        slideToClickedSlide: true
     });
     
+    mainSlider.params.control = thumbnailSlider;
+    thumbnailSlider.params.control = mainSlider;
+    
 }, 1000);
-
-
 
 $('section').horizon({
     swipe: false
 });
-
 
 var aChildren = $("nav li").children().not('.eventbrite-link'); // find the a children of the list items
     var aArray = []; // create the empty aArray
@@ -81,3 +100,4 @@ var aChildren = $("nav li").children().not('.eventbrite-link'); // find the a ch
             }
         }
     });
+
