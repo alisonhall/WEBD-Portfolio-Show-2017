@@ -84,7 +84,10 @@
                     <div class="large-text-container">
                         <h1 class="large-text">{{ person.firstName }} {{ person.lastName }}</h1>
                     </div>
-                    <div :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" class="student-image"></div>
+                    <div class="student-image">
+<!--                       :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" -->
+                        <img :src="'images/'+ person.photoURL" alt="">
+                    </div>
                     <div class="student-info">
                         <h1>{{ person.firstName }} {{ person.lastName }}</h1>
                         <h3>{{ person.skillSet }}</h3>
