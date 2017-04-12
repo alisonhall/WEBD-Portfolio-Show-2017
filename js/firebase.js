@@ -30,38 +30,39 @@ var vm = new Vue({
     
 });
 
+$(function() {
+    setTimeout(function () {
+        $('.swiper-container').css('opacity', '1')
 
-setTimeout(function () {
-    $('.swiper-container').css('opacity', '1')
-    
-    var firstSlide = Math.floor(Math.random() * 17)
-    var mainSlider = new Swiper('.main-slider', {
-        // Optional parameters
-        loop: true,
-        loopedSlides: 18,
-        initialSlide: firstSlide,
-        direction: 'horizontal',
-        keyboardControl: false,
-        shortSwipes: false,
-        noSwipingClass: 'thumbnails',
-        speed: 600,
-    })
+        var firstSlide = Math.floor(Math.random() * 17)
+        var mainSlider = new Swiper('.main-slider', {
+            // Optional parameters
+            loop: true,
+            loopedSlides: 18,
+            initialSlide: firstSlide,
+            direction: 'horizontal',
+            keyboardControl: false,
+            noSwipingClass: 'thumbnails',
+            speed: 600
+        })
 
-    var thumbnailSlider = new Swiper('.thumbnails', {
-        slideActiveClass: 'thumb-active',
-        initialSlide: firstSlide,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        loop: true,
-        loopedSlides: 18,
-        touchRatio: 0.2,
-        slideToClickedSlide: true
-    });
-    
-    mainSlider.params.control = thumbnailSlider;
-    thumbnailSlider.params.control = mainSlider;
-    
-}, 1000);
+        var thumbnailSlider = new Swiper('.thumbnails', {
+            slideActiveClass: 'thumb-active',
+            initialSlide: firstSlide,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            shortSwipes: false,
+            loopedSlides: 18,
+            touchRatio: 0.2,
+            slideToClickedSlide: true
+        });
+
+        mainSlider.params.control = thumbnailSlider;
+        thumbnailSlider.params.control = mainSlider;
+
+    }, 2000);
+})
 
 $('section').horizon({
     swipe: false
