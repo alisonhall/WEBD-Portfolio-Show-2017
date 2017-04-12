@@ -49,6 +49,20 @@
                 <a href="https://www.linkedin.com/groups/4414270" class="social linkedin"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
             </div>
         </div>
+         <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+		<defs>
+			<path id="gentle-wave" d="m -160,44.4 c 30,0 58,
+		-18 87.7,-18 30.3,0 58.3,
+		18 87.3,18 30,0 58,-18 88,
+		-18 30,0 58,18 88,18 l 0,
+		34.5 -351,0 z" />
+		</defs>
+		<g class="parallax">
+			<use xlink:href="#gentle-wave" x="50" y="0" fill="#a21f4b" />
+			<use xlink:href="#gentle-wave" x="50" y="3" fill="#c72b5f" />
+			<use xlink:href="#gentle-wave" x="50" y="6" fill="#dd2c68" />
+		</g>
+	</svg>
     </section>
 
 
@@ -59,20 +73,22 @@
             <div class="event-left">
                 <h4>WHERE</h4>
                 <div class="event-p">
-                    <p>THE BURROUGHES BUILDING</p>
-                    <p>639 QUEEN ST W, TORONTO, ON</p>
+                    <p>The Burroughes Building</p>
+                    <p>Queen St. W, Toronto, ON</p>
                     <p>M5V 2B7</p>
                 </div>
             </div>
             <div class="event-right">
                 <h4>WHEN</h4>
                 <div class="event-p">
-                    <p>APRIL 25TH 2017</p>
+                    <p>April 25TH 2017</p>
                     <p>5PM - 8PM</p>
                 </div>
             </div>
         </div>
-        <div id="map" class="map"></div>
+        <a id="map" class="map" href="https://goo.gl/maps/mUVFJZ6bnzv" target="_blank">
+        <img src="/images/map.png" alt="">
+        </a>
     </section>
     <section data-role="section" id="section-section3">
         <!-- Slider main container -->
@@ -215,122 +231,106 @@
         </div>
     </section>
 
-
-    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-		<defs>
-			<path id="gentle-wave" d="m -160,44.4 c 30,0 58,
-		-18 87.7,-18 30.3,0 58.3,
-		18 87.3,18 30,0 58,-18 88,
-		-18 30,0 58,18 88,18 l 0,
-		34.5 -351,0 z" />
-		</defs>
-		<g class="parallax">
-			<use xlink:href="#gentle-wave" x="50" y="0" fill="#a21f4b" />
-			<use xlink:href="#gentle-wave" x="50" y="3" fill="#c72b5f" />
-			<use xlink:href="#gentle-wave" x="50" y="6" fill="#dd2c68" />
-		</g>
-	</svg>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFOXCZYCpBkNRnA3pkCXjlflftZAPwMH4&callback=initMap" async defer></script>
     <script>
-        function initMap() {
-            var uluru = {
-                lat: 43.647233,
-                lng: -79.403389
-            };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: uluru,
-                styles: [{
-                    "featureType": "administrative",
-                    "elementType": "all",
-                    "stylers": [{
-                        "saturation": "-100"
-                    }]
-                }, {
-                    "featureType": "administrative.province",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "off"
-                    }]
-                }, {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [{
-                        "saturation": -100
-                    }, {
-                        "lightness": 65
-                    }, {
-                        "visibility": "on"
-                    }]
-                }, {
-                    "featureType": "poi",
-                    "elementType": "all",
-                    "stylers": [{
-                        "saturation": -100
-                    }, {
-                        "lightness": "50"
-                    }, {
-                        "visibility": "simplified"
-                    }]
-                }, {
-                    "featureType": "road",
-                    "elementType": "all",
-                    "stylers": [{
-                        "saturation": "-100"
-                    }]
-                }, {
-                    "featureType": "road.highway",
-                    "elementType": "all",
-                    "stylers": [{
-                        "visibility": "simplified"
-                    }]
-                }, {
-                    "featureType": "road.arterial",
-                    "elementType": "all",
-                    "stylers": [{
-                        "lightness": "30"
-                    }]
-                }, {
-                    "featureType": "road.local",
-                    "elementType": "all",
-                    "stylers": [{
-                        "lightness": "40"
-                    }]
-                }, {
-                    "featureType": "transit",
-                    "elementType": "all",
-                    "stylers": [{
-                        "saturation": -100
-                    }, {
-                        "visibility": "simplified"
-                    }]
-                }, {
-                    "featureType": "water",
-                    "elementType": "geometry",
-                    "stylers": [{
-                        "hue": "#ffff00"
-                    }, {
-                        "lightness": -25
-                    }, {
-                        "saturation": -97
-                    }]
-                }, {
-                    "featureType": "water",
-                    "elementType": "labels",
-                    "stylers": [{
-                        "lightness": -25
-                    }, {
-                        "saturation": -100
-                    }]
-                }]
-            });
-            var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-            });
-        }
+//        function initMap() {
+//            var uluru = {
+//                lat: 43.647233,
+//                lng: -79.403389
+//            };
+//            var map = new google.maps.Map(document.getElementById('map'), {
+//                zoom: 15,
+//                center: uluru,
+//                styles: [{
+//                    "featureType": "administrative",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "saturation": "-100"
+//                    }]
+//                }, {
+//                    "featureType": "administrative.province",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "visibility": "off"
+//                    }]
+//                }, {
+//                    "featureType": "landscape",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "saturation": -100
+//                    }, {
+//                        "lightness": 65
+//                    }, {
+//                        "visibility": "on"
+//                    }]
+//                }, {
+//                    "featureType": "poi",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "saturation": -100
+//                    }, {
+//                        "lightness": "50"
+//                    }, {
+//                        "visibility": "simplified"
+//                    }]
+//                }, {
+//                    "featureType": "road",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "saturation": "-100"
+//                    }]
+//                }, {
+//                    "featureType": "road.highway",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "visibility": "simplified"
+//                    }]
+//                }, {
+//                    "featureType": "road.arterial",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "lightness": "30"
+//                    }]
+//                }, {
+//                    "featureType": "road.local",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "lightness": "40"
+//                    }]
+//                }, {
+//                    "featureType": "transit",
+//                    "elementType": "all",
+//                    "stylers": [{
+//                        "saturation": -100
+//                    }, {
+//                        "visibility": "simplified"
+//                    }]
+//                }, {
+//                    "featureType": "water",
+//                    "elementType": "geometry",
+//                    "stylers": [{
+//                        "hue": "#ffff00"
+//                    }, {
+//                        "lightness": -25
+//                    }, {
+//                        "saturation": -97
+//                    }]
+//                }, {
+//                    "featureType": "water",
+//                    "elementType": "labels",
+//                    "stylers": [{
+//                        "lightness": -25
+//                    }, {
+//                        "saturation": -100
+//                    }]
+//                }]
+//            });
+//            var marker = new google.maps.Marker({
+//                position: uluru,
+//                map: map
+//            });
+//        }
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>

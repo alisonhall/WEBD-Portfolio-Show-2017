@@ -110,7 +110,7 @@ header nav a:hover:after {
 }
 
 .wave {
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     display: block;
     width: 100%;
@@ -285,6 +285,8 @@ section>div {
 .event-top {
     padding: 15%;
     width: 100%;
+    position: absolute;
+    top: 40px;
 }
 
 .event-top > div {
@@ -295,14 +297,28 @@ section>div {
 
 .event-top p {
     border: none;
-    font-weight: 700;
+    font-weight: 400;
     margin: initial;
+}
+.event-right {
+    padding-left: 10%;
 }
 
 .map {
-    height: 20%;
+    height: 30%;
     width: 100%;
+    display: flex;
     z-index: 100;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+.map img {
+    width: 140%;
+    padding-top: 100px;
 }
 
 .swiper-container {
@@ -395,7 +411,7 @@ section>div {
     padding: 6px 0px 18px 30px;
     border-left: 3px solid #5068f6;
     letter-spacing: 1.5px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     width: 100%;
 }
 
