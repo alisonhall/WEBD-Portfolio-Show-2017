@@ -49,8 +49,7 @@ function initSlider() {
             initialSlide: firstSlide,
             direction: 'horizontal',
             keyboardControl: false,
-            noSwipingClass: 'thumbnails',
-            speed: 600
+            speed: 1200
         })
 
         var thumbnailSlider = new Swiper('.thumbnails', {
@@ -62,7 +61,8 @@ function initSlider() {
             shortSwipes: false,
             loopedSlides: 18,
             touchRatio: 0.2,
-            slideToClickedSlide: true
+            slideToClickedSlide: true,
+            speed: 1200
         });
 
         mainSlider.params.control = thumbnailSlider;
