@@ -42,31 +42,32 @@ function initSlider() {
         $('.swiper-container').css('opacity', '1')
 
         var firstSlide = Math.floor(Math.random() * 17)
+        var thumbnailSlider = new Swiper('.thumbnails', {
+            loop: true,
+            loopedSlides: 18,
+            initialSlide: firstSlide,
+            slidesOffsetBefore: 200,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            speed: 1200,
+            freeMode: true,
+            freeModeSticky: true,
+            slideActiveClass: 'thumb-active',
+            
+        });
         var mainSlider = new Swiper('.main-slider', {
             // Optional parameters
             loop: true,
             loopedSlides: 18,
             initialSlide: firstSlide,
-            direction: 'horizontal',
             keyboardControl: false,
-            speed: 1200
+            speed: 1200,
         })
 
-        var thumbnailSlider = new Swiper('.thumbnails', {
-            slideActiveClass: 'thumb-active',
-            initialSlide: firstSlide,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            loop: true,
-            shortSwipes: false,
-            loopedSlides: 18,
-            touchRatio: 0.2,
-            slideToClickedSlide: true,
-            speed: 1200
-        });
 
-        mainSlider.params.control = thumbnailSlider;
         thumbnailSlider.params.control = mainSlider;
+        mainSlider.params.control = thumbnailSlider;
+        
 }
 
 $('section').horizon({
