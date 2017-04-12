@@ -27,11 +27,18 @@ var vm = new Vue({
     data: {
         items: data
     },
+    methods: {
+      intiSlider: initSlider  
+    },
+    updated() {
+        initSlider()
+    }
     
 });
 
-$(function() {
-    setTimeout(function () {
+
+function initSlider() {
+        console.log("Test")
         $('.swiper-container').css('opacity', '1')
 
         var firstSlide = Math.floor(Math.random() * 17)
@@ -60,9 +67,7 @@ $(function() {
 
         mainSlider.params.control = thumbnailSlider;
         thumbnailSlider.params.control = mainSlider;
-
-    }, 2500);
-})
+}
 
 $('section').horizon({
     swipe: false
