@@ -61,7 +61,7 @@ $(function() {
         mainSlider.params.control = thumbnailSlider;
         thumbnailSlider.params.control = mainSlider;
 
-    }, 2000);
+    }, 2500);
 })
 
 $('section').horizon({
