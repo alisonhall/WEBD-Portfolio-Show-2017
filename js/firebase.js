@@ -109,9 +109,8 @@ $(window).scroll(function () {
 });
 
 
-var kkeys = [],
-    konami = "38,38,40,40,37,39,37,39,66,65";
 
+//KONAMI CODE -UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT B A-
 
 neededkeys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], started = false, count = 0;
 $(document).keydown(function (e) {
@@ -128,10 +127,9 @@ $(document).keydown(function (e) {
             reset();
         }
         if (count == 10) {
-            //We made it! Put code here to do what you want when successfully execute konami sequence
             var audio = new Audio('SnapSnapClap.mp3');
             audio.play();
-            //Reset the conditions so that someone can do it all again.
+            //ADD OTHER FUN STUFF HERE
             reset();
         }
     } else {

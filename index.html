@@ -23,7 +23,7 @@
                 <li class="selected"><a href="#section-section1">Home</a></li>
                 <li><a href="#section-section2">Event</a></li>
                 <li><a href="#section-section3">Squad</a></li>
-                <li><a class="eventbrite-link" href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599">RSVP</a></li>
+                <li><a class="eventbrite-link" href="https://www.eventbrite.ca/e/humber-college-presents-shift-tickets-33086495599" target="_blank">RSVP</a></li>
             </ul>
         </nav>
     </header>
@@ -101,7 +101,6 @@
                         <h1 class="large-text">{{ person.firstName }} {{ person.lastName }}</h1>
                     </div>
                     <div class="student-image">
-<!--                       :style="{ 'background-image': 'url(images/' + person.photoURL + ')' }" -->
                         <img :src="'images/'+ person.photoURL" alt="">
                     </div>
                     <div class="student-info">
@@ -109,108 +108,108 @@
                         <h3>{{ person.skillSet }}</h3>
                         <p>{{ person.introduction }}</p>
                         <div class="student-links">
-                            <a :href="person.portfolioLink" class="button">View Portfolio</a>
+                            <a :href="person.portfolioLink" class="button" target="_blank">View Portfolio</a>
                             <div class="social-links">
 
                                 <!--FIRST SOCIAL MEDIA ICON-->
 
-                                <a :href="person.linkedin" v-if="person.socialMedia1 == 'linkedin'">
+                                <a :href="person.linkedin" v-if="person.socialMedia1 == 'linkedin'" target="_blank">
                                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.codepen" v-if="person.socialMedia1 == 'codepen'">
+                                <a :href="person.codepen" v-if="person.socialMedia1 == 'codepen'" target="_blank">
                                     <i class="fa fa-codepen" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.instagram" v-if="person.socialMedia1 == 'instagram'">
+                                <a :href="person.instagram" v-if="person.socialMedia1 == 'instagram'" target="_blank">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.github" v-if="person.socialMedia1 == 'github'">
+                                <a :href="person.github" v-if="person.socialMedia1 == 'github'" target="_blank">
                                     <i class="fa fa-github" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.dribble" v-if="person.socialMedia1 == 'dribble'">
+                                <a :href="person.dribble" v-if="person.socialMedia1 == 'dribble'" target="_blank">
                                     <i class="fa fa-dribbble" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.behance" v-if="person.socialMedia1 == 'behance'">
+                                <a :href="person.behance" v-if="person.socialMedia1 == 'behance'" target="_blank">
                                     <i class="fa fa-behance" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.facebook" v-if="person.socialMedia1 == 'facebook'">
+                                <a :href="person.facebook" v-if="person.socialMedia1 == 'facebook'" target="_blank">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.twitter" v-if="person.socialMedia1 == 'twitter'">
+                                <a :href="person.twitter" v-if="person.socialMedia1 == 'twitter'" target="_blank">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
 
                                 <!--SECOND SOCIAL MEDIA ICON-->
 
-                                <a :href="person.linkedin" v-if="person.socialMedia2 == 'linkedin'">
+                                <a :href="person.linkedin" v-if="person.socialMedia2 == 'linkedin'" target="_blank">
                                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.codepen" v-if="person.socialMedia2 == 'codepen'">
+                                <a :href="person.codepen" v-if="person.socialMedia2 == 'codepen'" target="_blank">
                                     <i class="fa fa-codepen" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.instagram" v-if="person.socialMedia2 == 'instagram'">
+                                <a :href="person.instagram" v-if="person.socialMedia2 == 'instagram'" target="_blank">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.github" v-if="person.socialMedia2 == 'github'">
+                                <a :href="person.github" v-if="person.socialMedia2 == 'github'" target="_blank">
                                     <i class="fa fa-github" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.dribble" v-if="person.socialMedia2 == 'dribble'">
+                                <a :href="person.dribble" v-if="person.socialMedia2 == 'dribble'" target="_blank">
                                     <i class="fa fa-dribbble" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.behance" v-if="person.socialMedia2 == 'behance'">
+                                <a :href="person.behance" v-if="person.socialMedia2 == 'behance'" target="_blank">
                                     <i class="fa fa-behance" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.facebook" v-if="person.socialMedia2 == 'facebook'">
+                                <a :href="person.facebook" v-if="person.socialMedia2 == 'facebook'" target="_blank">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.twitter" v-if="person.socialMedia2 == 'twitter'">
+                                <a :href="person.twitter" v-if="person.socialMedia2 == 'twitter'" target="_blank">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
 
                                 <!--THIRD SOCIAL MEDIA ICON-->
 
-                                <a :href="person.linkedin" v-if="person.socialMedia3 == 'linkedin'">
+                                <a :href="person.linkedin" v-if="person.socialMedia3 == 'linkedin'" target="_blank">
                                     <i class="fa fa-linkedin" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.codepen" v-if="person.socialMedia3 == 'codepen'">
+                                <a :href="person.codepen" v-if="person.socialMedia3 == 'codepen'" target="_blank">
                                     <i class="fa fa-codepen" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.instagram" v-if="person.socialMedia3 == 'instagram'">
+                                <a :href="person.instagram" v-if="person.socialMedia3 == 'instagram'" target="_blank">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.github" v-if="person.socialMedia3 == 'github'">
+                                <a :href="person.github" v-if="person.socialMedia3 == 'github'" target="_blank">
                                     <i class="fa fa-github" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.dribble" v-if="person.socialMedia3 == 'dribble'">
+                                <a :href="person.dribble" v-if="person.socialMedia3 == 'dribble'" target="_blank">
                                     <i class="fa fa-dribbble" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.behance" v-if="person.socialMedia3 == 'behance'">
+                                <a :href="person.behance" v-if="person.socialMedia3 == 'behance'" target="_blank">
                                     <i class="fa fa-behance" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.facebook" v-if="person.socialMedia3 == 'facebook'">
+                                <a :href="person.facebook" v-if="person.socialMedia3 == 'facebook'" target="_blank">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
 
-                                <a :href="person.twitter" v-if="person.socialMedia3 == 'twitter'">
+                                <a :href="person.twitter" v-if="person.socialMedia3 == 'twitter'" target="_blank">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
                             </div>

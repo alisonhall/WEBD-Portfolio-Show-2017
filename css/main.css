@@ -21,6 +21,7 @@ header img {
     width: 164px;
     padding: 50px 30px;
     box-shadow: 10px 10px 50px 0px rgba(0, 0, 0, 0.4);
+    background-color: #1e2756;
 }
 
 header nav ul {
