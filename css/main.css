@@ -597,10 +597,10 @@ section {
         height: auto;
         float: none;
         padding: 10% 0;
-        width: 100vh !important;
+        width: 100vw !important;
     }
     header > a {
-        display: none;
+        display: none !important;
     }
     header nav ul {
         padding: 50px 0;
@@ -613,6 +613,16 @@ section {
     section > * {
         display: inline-block;
         height: auto;
+    }
+    .top {
+        align-items: center;
+        min-height: 40vh;
+    }
+    .top h1 {
+        margin: 0;
+    }
+    .bottom {
+        padding: 5%;
     }
     .left {
         min-height: 280px;
@@ -636,10 +646,10 @@ section {
         position: fixed;
         bottom: 0;
     }
-
     .event-top {
         position: relative;
-        padding: 0;
+        padding: 5%;
+        width: 90%;
     }
     .event-top > div {
         float: none;
@@ -647,6 +657,21 @@ section {
     }
     .event-top .event-right {
         margin-bottom: 30vh;
+    }
+    .thumbnails {
+        top: 0;
+        bottom: auto;
+    }
+    .swiper-wrapper {
+        margin-top: 175px;
+    }
+    .student-image {
+        display: none;
+    }
+    .student-info {
+        height: auto;
+        padding: 5%;
+        width: 100%;
     }
 }
 
