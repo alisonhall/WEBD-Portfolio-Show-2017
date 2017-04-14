@@ -13,7 +13,11 @@ header {
     z-index: 999;
 }
 
-header img {
+header > a {
+    opacity: 0;
+}
+
+header object {
     position: absolute;
     left: 38px;
     top: 0;
@@ -45,6 +49,7 @@ header nav a {
     font-family: 'Montserrat';
     font-weight: 300;
     text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 header nav a:before,
@@ -65,14 +70,14 @@ header nav a:before {
 header nav a:after {
     right: 2.5px;
     background: #DB3069;
-    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: width 0.8s cubic-bezier(.43,0,.24,.99);
 }
 
 header nav a:hover:before,
 header nav .selected a:before {
     background: #DB3069;
     width: 100%;
-    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: width 0.5s cubic-bezier(.43,0,.24,.99);
 }
 
 header nav a:hover:after {
@@ -111,12 +116,16 @@ header nav a:hover:after {
 }
 
 .wave {
+    z-index: -10;
     position: absolute;
     bottom: 0px;
     display: block;
     width: 100%;
     height: 14em;
     margin: 0;
+    -webkit-animation: move_wave 10s cubic-bezier(.43,0,.24,.99) 0.75s 1 both;
+    -o-animation: move_wave 10s cubic-bezier(.43,0,.24,.99) 0.75s 1 both;
+    animation: move_wave 10s cubic-bezier(.43,0,.24,.99) 0.75s 1 both;
 }
 
 html {
@@ -142,63 +151,93 @@ section {
     margin: 0;
 }
 
-section>div {
-    width: 50%;
+#section-section1 {
+    flex-direction: column;
 }
 
-.left {
+.top {
+    width: 100vw;
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    align-items: flex-end;
+    min-height: 70vh;
+    perspective: 1000px;
 }
 
-.left img {
+.top h1 {
+    font-weight: 900;
+    font-size: 19vw;
+    line-height: 0.725;
+    text-align: center;
+    color: black;
+    opacity: 0.1;
+    margin: auto auto 0;
+    -webkit-animation: intro_webdsquad 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
+    -o-animation: intro_webdsquad 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
+    animation: intro_webdsquad 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
+}
+
+.top:nth-of-type(1) {
+    position: absolute;
+}
+
+.top object {
+    -webkit-animation: intro_2017 3s cubic-bezier(.43,0,.24,.99) 0.5s 1 both;
+    -o-animation: intro_2017 3s cubic-bezier(.43,0,.24,.99) 0.5s 1 both;
+    animation: intro_2017 3s cubic-bezier(.43,0,.24,.99) 0.5s 1 both;
     width: 70%;
 }
 
-.right {
+.top:nth-of-type(2) {
+    -webkit-animation: move_2017 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both;
+    -o-animation: move_2017 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both;
+    animation: move_2017 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both;
+}
+
+.bottom {
     color: white;
-    padding: 0 6%;
+    padding: 3vh 0vw 0vh 60vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    -webkit-animation: bottom_text 2s cubic-bezier(.43,0,.24,.99) 3.6s 1 both;
+    -o-animation: bottom_text 2s cubic-bezier(.43,0,.24,.99) 3.6s 1 both;
+    animation: bottom_text 2s cubic-bezier(.43,0,.24,.99) 3.6s 1 both;
 }
 
-.right>* {
-    letter-spacing: 2px;
+.bottom>* {
+    letter-spacing: 5px;
     text-transform: uppercase;
     padding-bottom: 10px;
     margin: 0;
     padding: 10px 0;
 }
 
-.right h1 {
-    font-size: 4rem;
-}
 
-.right h2 {
+
+.bottom h2 {
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 2.8rem;
 }
 
-.right h3,
-.right h4 {
-    font-size: 1.3rem;
+.bottom h3,
+.bottom h4 {
+    font-size: 1.2rem;
     line-height: 1.7rem;
     padding: 3px 0;
 }
 
-.right h3 {
-    font-weight: 500;
+.bottom h3 {
+    font-weight: 300;
     color: #DD2C68;
 }
 
-.right h4 {
-    font-weight: 400;
+.bottom h4 {
+    font-weight: 300;
 }
 
-.right p {
+.bottom p {
     font-size: 1.2rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -222,7 +261,6 @@ section>div {
 .links {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
 }
 
 .rsvp {
@@ -255,7 +293,7 @@ section>div {
 }
 
 .social:first-of-type {
-    margin-left: 5px;
+    margin-left: 0px;
 }
 
 .button {
@@ -575,4 +613,100 @@ section>div {
     .right .rsvp {
         padding: 10px 30px;
     }
+}
+
+/* ---> */
+/* --> Animations, commonly referred to as "last-priority there bud" */
+/* -> */
+
+/* >> WEBD SQUAD */
+
+/* --> Rotational, Movement, & Color Component */
+@-webkit-keyframes intro_webdsquad {
+    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
+}
+@-o-keyframes intro_webdsquad {
+    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
+}
+@-moz-keyframes intro_webdsquad {
+    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
+}
+@keyframes intro_webdsquad {
+    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
+}
+
+/* --> Opacity Component */
+@-webkit-keyframes change_webdsquad {
+    from { opacity: 1; }
+}
+@-o-keyframes change_webdsquad {
+    from { opacity: 1; }
+}
+@-moz-keyframes change_webdsquad {
+    from { opacity: 1; }
+}
+@keyframes change_webdsquad {
+    from { opacity: 1; }
+}
+
+/* >> 2017 */
+
+/* --> Rotational Component (look as if it were being rotated on an axis) */
+@-webkit-keyframes intro_2017 {
+    from { transform: scale(0.8) rotateX(60deg); }
+}
+@-o-keyframes intro_2017 {
+    from { transform: scale(0.8) rotateX(60deg); }
+}
+@-moz-keyframes intro_2017 {
+    from { transform: scale(0.8) rotateX(60deg); }
+}
+@keyframes intro_2017 {
+    from { transform: scale(0.8) rotateX(60deg); }
+}
+
+/* --> Movement Component (resizing margin affects bottom-trailing div) */
+@-webkit-keyframes move_2017 {
+    from { margin-top: 150vh; }
+}
+@-o-keyframes move_2017 {
+    from { margin-top: 150vh; }
+}
+@-moz-keyframes move_2017 {
+    from { margin-top: 150vh; }
+}
+@keyframes move_2017 {
+    from { margin-top: 150vh; }
+}
+
+/* >> Bottom-text */
+
+/* --> Similar movement component to 2017 but with combined opacity */
+@-webkit-keyframes bottom_text {
+    from { opacity: 0; margin-top: 100px; }
+}
+@-o-keyframes bottom_text {
+    from { opacity: 0; margin-top: 100px; }
+}
+@-moz-keyframes bottom_text {
+    from { opacity: 0; margin-top: 100px; }
+}
+@keyframes bottom_text {
+    from { opacity: 0; margin-top: 100px; }
+}
+
+/* >> Waves */
+
+/* --> Ease in you little beaut */
+@-webkit-keyframes move_wave {
+    from { bottom: -20vh; }
+}
+@-o-keyframes move_wave {
+    from { bottom: -20vh; }
+}
+@-moz-keyframes move_wave {
+    from { bottom: -20vh; }
+}
+@keyframes move_wave {
+    from { bottom: -20vh; }
 }
