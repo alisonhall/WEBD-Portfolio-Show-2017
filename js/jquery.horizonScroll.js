@@ -98,7 +98,7 @@
     $.fn.horizon.defaults = {
         scrollTimeout: null,
         scrollEndDelay: 250,
-        scrollDuration: 400,
+        scrollDuration: 550,
         i: 0,
         limit: 0,
         docWidth: 0,

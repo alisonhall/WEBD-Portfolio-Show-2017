@@ -99,7 +99,14 @@ $(window).scroll(function () {
         }
     }
 
+    if (window.location.href.indexOf("#section-section1") != -1) {
+        $("header > a").fadeTo('fast', 0);
+    } else {
+        $("header > a").fadeTo('fast', 1);
+    }
+
     if (windowPos + windowWidth == docWidth) {
+
         if (!$("nav li:last-child a").hasClass("selected")) {
             var navActiveCurrent = $(".selected").attr("href");
             $("a[href='" + navActiveCurrent + "']").removeClass("selected");
