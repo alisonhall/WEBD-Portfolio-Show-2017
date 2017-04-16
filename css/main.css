@@ -327,6 +327,7 @@ section {
     padding: 15%;
     width: 100%;
     position: absolute;
+    top: 50px;
 }
 
 .event-top > div {
@@ -337,7 +338,7 @@ section {
 
 .event-top p {
     border: none;
-    font-weight: 400;
+    font-weight: 300;
     margin: initial;
 }
 
@@ -450,6 +451,7 @@ section {
     letter-spacing: 1.5px;
     font-size: 1.2rem;
     width: 100%;
+    line-height: 1.7rem;
 }
 
 .custom-bullet {
@@ -468,14 +470,29 @@ section {
 }
 
 .social-links {
-    margin-top: 32px;
+    /*margin-top: 32px;*/
+    display: inline-block;
 }
 
 .social-links a {
     color: #edeff7;
     font-size: 1.8rem;
     height: 100%;
-    margin-right: 30px;
+    margin-left: 25px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    transition: all 0.4s ease-out;
+}
+
+.social-links a:first-of-type {
+  margin-left: 50px;
+}
+
+.social-links a:hover,
+.social-links a:active {
+  /*color: #5068f6;*/
+  color: #DB3069;
 }
 
 .thumbnails {
@@ -502,6 +519,10 @@ section {
     display: flex;
     justify-content: center;
     overflow: hidden;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
 }
 
 .thumbnail::after {
@@ -549,7 +570,25 @@ section {
 
 /*prevent many large-by-comparison ripples by shrinking the height*/
 
-@media (max-width: 50em) {
+@media screen and (max-height: 750px) {
+    .student-info {
+      padding: 100px 50px 100px 0;
+    }
+    .student-info h3, .event-top h4 {
+      margin-bottom: 0;
+    }
+    .student-links {
+      margin-top: 0;
+    }
+}
+
+@media screen and (max-height: 685px) {
+  .student-info {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 50em) {
     .content h1 {
         font-size: 12vmax;
     }
@@ -562,6 +601,9 @@ section {
     }
     body {
         padding: 0;
+    }
+    header > a {
+        display: none !important;
     }
     section>div {
         width: 100%;
@@ -585,6 +627,9 @@ section {
         display: inline-block;
         padding: 4% 21%;
     }
+    .event-top {
+      top: 100px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -598,9 +643,6 @@ section {
         float: none;
         padding: 10% 0;
         width: 100vw !important;
-    }
-    header > a {
-        display: none !important;
     }
     header nav ul {
         padding: 50px 0;
