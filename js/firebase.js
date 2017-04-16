@@ -99,7 +99,7 @@ $(window).scroll(function () {
         }
     }
 
-    if (window.location.href.indexOf("#section-section1") != -1) {
+    if (window.location.href.indexOf("#home") != -1) {
         $("header > a").fadeTo('fast', 0);
     } else {
         $("header > a").fadeTo('fast', 1);
