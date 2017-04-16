@@ -606,8 +606,7 @@ section {
 
 @media screen and (max-width: 900px) {
     .wave {
-        width: 200%;
-        height: 10em;
+        display: none;
     }
     body {
         padding: 0;
@@ -636,6 +635,7 @@ section {
     section {
         display: inline-block;
         padding: 4% 21%;
+        width: 100vh;
     }
     .event-top {
         top: 100px;
@@ -647,17 +647,16 @@ section {
     body {
         margin: 0 !important;
         overflow-x: hidden;
-        height: auto;
+        overflow-y: scroll;
+        max-width: 100%;
     }
-
     section {
+        position: relative;
         height: auto;
         float: none;
         padding: 0;
         margin: 2% 0 !important;
-        margin-bottom: 5%;
-        width: 100vw !important;
-        overflow-x: hidden;
+        width: 100% !important;
     }
     section>* {
         display: inline-block;
@@ -691,12 +690,6 @@ section {
     .right .rsvp {
         padding: 10px 30px;
     }
-/*
-    .wave {
-        position: fixed;
-        bottom: 0;
-    }
-*/
     .student-info p,
     .event-p {
         margin-left: 0px;
