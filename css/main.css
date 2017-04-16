@@ -13,7 +13,7 @@ header {
     z-index: 999;
 }
 
-header > a {
+header>a {
     opacity: 0;
 }
 
@@ -70,14 +70,14 @@ header nav a:before {
 header nav a:after {
     right: 2.5px;
     background: #DB3069;
-    transition: width 0.8s cubic-bezier(.43,0,.24,.99);
+    transition: width 0.8s cubic-bezier(.43, 0, .24, .99);
 }
 
 header nav a:hover:before,
 header nav .selected a:before {
     background: #DB3069;
     width: 100%;
-    transition: width 0.5s cubic-bezier(.43,0,.24,.99);
+    transition: width 0.5s cubic-bezier(.43, 0, .24, .99);
 }
 
 header nav a:hover:after {
@@ -123,9 +123,9 @@ header nav a:hover:after {
     width: 100%;
     height: 14em;
     margin: 0;
-    -webkit-animation: move_wave 10s cubic-bezier(.43,0,.24,.99) 0.75s 1 both;
-    -o-animation: move_wave 10s cubic-bezier(.43,0,.24,.99) 0.75s 1 both;
-    animation: move_wave 10s cubic-bezier(.43,0,.24,.99) 0.75s 1 both;
+    -webkit-animation: move_wave 10s cubic-bezier(.43, 0, .24, .99) 0.75s 1 both;
+    -o-animation: move_wave 10s cubic-bezier(.43, 0, .24, .99) 0.75s 1 both;
+    animation: move_wave 10s cubic-bezier(.43, 0, .24, .99) 0.75s 1 both;
 }
 
 html {
@@ -172,9 +172,9 @@ section {
     color: black;
     opacity: 0.1;
     margin: auto auto 0;
-    -webkit-animation: intro_webdsquad 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
-    -o-animation: intro_webdsquad 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
-    animation: intro_webdsquad 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
+    -webkit-animation: intro_webdsquad 2.5s cubic-bezier(.43, 0, .24, .99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
+    -o-animation: intro_webdsquad 2.5s cubic-bezier(.43, 0, .24, .99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
+    animation: intro_webdsquad 2.5s cubic-bezier(.43, 0, .24, .99) 1s 1 both, change_webdsquad 1.5s cubic-bezier(.76, 0, .57, 1) 1s 1 both;
 }
 
 .top:nth-of-type(1) {
@@ -182,16 +182,16 @@ section {
 }
 
 .top object {
-    -webkit-animation: intro_2017 3s cubic-bezier(.43,0,.24,.99) 0.5s 1 both;
-    -o-animation: intro_2017 3s cubic-bezier(.43,0,.24,.99) 0.5s 1 both;
-    animation: intro_2017 3s cubic-bezier(.43,0,.24,.99) 0.5s 1 both;
+    -webkit-animation: intro_2017 3s cubic-bezier(.43, 0, .24, .99) 0.5s 1 both;
+    -o-animation: intro_2017 3s cubic-bezier(.43, 0, .24, .99) 0.5s 1 both;
+    animation: intro_2017 3s cubic-bezier(.43, 0, .24, .99) 0.5s 1 both;
     width: 70%;
 }
 
 .top:nth-of-type(2) {
-    -webkit-animation: move_2017 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both;
-    -o-animation: move_2017 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both;
-    animation: move_2017 2.5s cubic-bezier(.43,0,.24,.99) 1s 1 both;
+    -webkit-animation: move_2017 2.5s cubic-bezier(.43, 0, .24, .99) 1s 1 both;
+    -o-animation: move_2017 2.5s cubic-bezier(.43, 0, .24, .99) 1s 1 both;
+    animation: move_2017 2.5s cubic-bezier(.43, 0, .24, .99) 1s 1 both;
 }
 
 .bottom {
@@ -200,9 +200,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    -webkit-animation: bottom_text 2s cubic-bezier(.43,0,.24,.99) 3.6s 1 both;
-    -o-animation: bottom_text 2s cubic-bezier(.43,0,.24,.99) 3.6s 1 both;
-    animation: bottom_text 2s cubic-bezier(.43,0,.24,.99) 3.6s 1 both;
+    -webkit-animation: bottom_text 2s cubic-bezier(.43, 0, .24, .99) 3.6s 1 both;
+    -o-animation: bottom_text 2s cubic-bezier(.43, 0, .24, .99) 3.6s 1 both;
+    animation: bottom_text 2s cubic-bezier(.43, 0, .24, .99) 3.6s 1 both;
 }
 
 .bottom>* {
@@ -212,8 +212,6 @@ section {
     margin: 0;
     padding: 10px 0;
 }
-
-
 
 .bottom h2 {
     font-size: 1.5rem;
@@ -334,17 +332,17 @@ section {
     display: inline-block !important;
 }
 
-.event-top > div {
+.event-container {
     width: 70%;
 }
 
 .event-container {
-    display:flex;
+    display: flex;
     margin-top: 50px;
     flex-wrap: wrap
 }
 
-.event-container > div {
+.event-container>div {
     margin-top: 40px;
     width: 50%;
 }
@@ -364,11 +362,9 @@ section {
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
-}
-
-.map img {
-    width: 140%;
-    padding-top: 100px;
+    background-image: url(../images/map.png);
+    background-position: center center;
+    background-size: 140%;
 }
 
 .swiper-container {
@@ -498,13 +494,13 @@ section {
 }
 
 .social-links a:first-of-type {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 
 .social-links a:hover,
 .social-links a:active {
-  /*color: #5068f6;*/
-  color: #DB3069;
+    /*color: #5068f6;*/
+    color: #DB3069;
 }
 
 .thumbnails {
@@ -534,7 +530,7 @@ section {
 }
 
 .thumbnail:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .thumbnail::after {
@@ -570,7 +566,7 @@ section {
     transform: scale(1.2);
     transform-origin: center;
     z-index: 22;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.50);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.50);
 }
 
 .thumbnail:hover h6,
@@ -584,20 +580,21 @@ section {
 
 @media screen and (max-height: 750px) {
     .student-info {
-      padding: 100px 50px 100px 0;
+        padding: 100px 50px 100px 0;
     }
-    .student-info h3, .event-top h4 {
-      margin-bottom: 0;
+    .student-info h3,
+    .event-top h4 {
+        margin-bottom: 0;
     }
     .student-links {
-      margin-top: 0;
+        margin-top: 0;
     }
 }
 
 @media screen and (max-height: 685px) {
-  .student-info {
-    height: auto;
-  }
+    .student-info {
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 50em) {
@@ -614,7 +611,7 @@ section {
     body {
         padding: 0;
     }
-    header > a {
+    header {
         display: none !important;
     }
     section>div {
@@ -640,31 +637,28 @@ section {
         padding: 4% 21%;
     }
     .event-top {
-      top: 100px;
+        top: 100px;
     }
 }
 
 @media screen and (max-width: 650px) {
     html,
     body {
-        overflow-y: visible;
+        margin: 0 !important;
+        overflow-x: hidden;
         height: auto;
     }
+
     section {
         height: auto;
         float: none;
-        padding: 10% 0;
+        padding: 0;
+        margin: 2% 0 !important;
+        margin-bottom: 5%;
         width: 100vw !important;
+        overflow-x: hidden;
     }
-    header nav ul {
-        padding: 50px 0;
-        display: flex;
-        justify-content: space-between;
-    }
-    header nav li {
-        margin: 0;
-    }
-    section > * {
+    section>* {
         display: inline-block;
         height: auto;
     }
@@ -700,17 +694,42 @@ section {
         position: fixed;
         bottom: 0;
     }
+    .student-info p,
+    .event-p {
+        margin-left: 0px;
+        padding: 6px 0px 18px 30px;
+        border-left: 3px solid #5068f6;
+        letter-spacing: 1.5px;
+        font-size: 1.2rem;
+        width: 100%;
+        line-height: 1.7rem;
+    }
+    .student-links {
+        margin: 0;
+    }
+    .student-links .button {
+        width: 100%;
+        text-align: center;
+    }
+    .social-links {
+        width: 100%;
+        margin-top: 32px !important;
+        text-align: center;
+    }
+    .social-links a {
+        margin: 0px 22px !important;
+    }
     .event-top {
-        position: relative;
-        padding: 5%;
-        width: 90%;
+        width: 100%;
+        padding: 4%;
     }
-    .event-top > div {
-        float: none;
-        width: auto;
+    .event-container {
+        margin: 0;
+        width: 100%;
     }
-    .event-top .event-right {
-        margin-bottom: 30vh;
+    .event-container>div {
+        width: 100%;
+        margin: 20px;
     }
     .thumbnails {
         top: 0;
@@ -729,98 +748,193 @@ section {
     }
 }
 
+
 /* ---> */
+
+
 /* --> Animations, commonly referred to as "last-priority there bud" */
+
+
 /* -> */
+
 
 /* >> WEBD SQUAD */
 
+
 /* --> Rotational, Movement, & Color Component */
+
 @-webkit-keyframes intro_webdsquad {
-    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
-}
-@-o-keyframes intro_webdsquad {
-    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
-}
-@-moz-keyframes intro_webdsquad {
-    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
-}
-@keyframes intro_webdsquad {
-    from { color: #EDEFF7; transform: scale(1.2) rotateX(15deg); }
+    from {
+        color: #EDEFF7;
+        transform: scale(1.2) rotateX(15deg);
+    }
 }
 
+@-o-keyframes intro_webdsquad {
+    from {
+        color: #EDEFF7;
+        transform: scale(1.2) rotateX(15deg);
+    }
+}
+
+@-moz-keyframes intro_webdsquad {
+    from {
+        color: #EDEFF7;
+        transform: scale(1.2) rotateX(15deg);
+    }
+}
+
+@keyframes intro_webdsquad {
+    from {
+        color: #EDEFF7;
+        transform: scale(1.2) rotateX(15deg);
+    }
+}
+
+
 /* --> Opacity Component */
+
 @-webkit-keyframes change_webdsquad {
-    from { opacity: 1; }
+    from {
+        opacity: 1;
+    }
 }
+
 @-o-keyframes change_webdsquad {
-    from { opacity: 1; }
+    from {
+        opacity: 1;
+    }
 }
+
 @-moz-keyframes change_webdsquad {
-    from { opacity: 1; }
+    from {
+        opacity: 1;
+    }
 }
+
 @keyframes change_webdsquad {
-    from { opacity: 1; }
+    from {
+        opacity: 1;
+    }
 }
+
 
 /* >> 2017 */
 
+
 /* --> Rotational Component (look as if it were being rotated on an axis) */
+
 @-webkit-keyframes intro_2017 {
-    from { transform: scale(0.8) rotateX(60deg); }
-}
-@-o-keyframes intro_2017 {
-    from { transform: scale(0.8) rotateX(60deg); }
-}
-@-moz-keyframes intro_2017 {
-    from { transform: scale(0.8) rotateX(60deg); }
-}
-@keyframes intro_2017 {
-    from { transform: scale(0.8) rotateX(60deg); }
+    from {
+        transform: scale(0.8) rotateX(60deg);
+    }
 }
 
+@-o-keyframes intro_2017 {
+    from {
+        transform: scale(0.8) rotateX(60deg);
+    }
+}
+
+@-moz-keyframes intro_2017 {
+    from {
+        transform: scale(0.8) rotateX(60deg);
+    }
+}
+
+@keyframes intro_2017 {
+    from {
+        transform: scale(0.8) rotateX(60deg);
+    }
+}
+
+
 /* --> Movement Component (resizing margin affects bottom-trailing div) */
+
 @-webkit-keyframes move_2017 {
-    from { margin-top: 150vh; }
+    from {
+        margin-top: 150vh;
+    }
 }
+
 @-o-keyframes move_2017 {
-    from { margin-top: 150vh; }
+    from {
+        margin-top: 150vh;
+    }
 }
+
 @-moz-keyframes move_2017 {
-    from { margin-top: 150vh; }
+    from {
+        margin-top: 150vh;
+    }
 }
+
 @keyframes move_2017 {
-    from { margin-top: 150vh; }
+    from {
+        margin-top: 150vh;
+    }
 }
+
 
 /* >> Bottom-text */
 
+
 /* --> Similar movement component to 2017 but with combined opacity */
+
 @-webkit-keyframes bottom_text {
-    from { opacity: 0; margin-top: 100px; }
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
 }
+
 @-o-keyframes bottom_text {
-    from { opacity: 0; margin-top: 100px; }
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
 }
+
 @-moz-keyframes bottom_text {
-    from { opacity: 0; margin-top: 100px; }
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
 }
+
 @keyframes bottom_text {
-    from { opacity: 0; margin-top: 100px; }
+    from {
+        opacity: 0;
+        margin-top: 100px;
+    }
 }
+
 
 /* >> Waves */
 
+
 /* --> Ease in you little beaut */
+
 @-webkit-keyframes move_wave {
-    from { bottom: -20vh; }
+    from {
+        bottom: -20vh;
+    }
 }
+
 @-o-keyframes move_wave {
-    from { bottom: -20vh; }
+    from {
+        bottom: -20vh;
+    }
 }
+
 @-moz-keyframes move_wave {
-    from { bottom: -20vh; }
+    from {
+        bottom: -20vh;
+    }
 }
+
 @keyframes move_wave {
-    from { bottom: -20vh; }
+    from {
+        bottom: -20vh;
+    }
 }
