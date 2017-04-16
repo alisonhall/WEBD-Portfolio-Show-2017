@@ -59,276 +59,279 @@
              <use xlink:href="#gentle-wave" x="50" y="6" fill="#dd2c68" />
          </g>
      </svg>
- </section>
- <section data-role="section" id="event">
-    <div class="event-top">
-        <h3>Event Details</h3>
-        <div class="event-left">
-            <h4>WHERE</h4>
-            <div class="event-p">
-                <p>THE BURROUGHES BUILDING</p>
-                <p>QUEEN ST. W, TORONTO, ON</p>
-                <p>M5V 2B7</p>
-            </div>
-        </div>
-        <div class="event-right">
-            <h4>WHEN</h4>
-            <div class="event-p">
-                <p>APRIL 25TH 2017</p>
-                <p>5PM - 8PM</p>
-            </div>
-        </div>
-    </div>
-    <a id="map" class="map" href="https://goo.gl/maps/mUVFJZ6bnzv" target="_blank">
-        <img src="images/map.png" alt="">
-    </a>
-</section>
-<section data-role="section" id="squad">
-    <!-- Slider main container -->
-    <div class="swiper-container main-slider" id="people" v-cloak>
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div v-for="person in items" class="swiper-slide main-slide">
-                <div class="large-text-container">
-                    <h1 class="large-text">{{ person.firstName }} {{ person.lastName }}</h1>
+    </section>
+    <section data-role="section" id="event">
+        <div class="event-top">
+            <div class="event-container">
+                <h3>Event Details</h3>
+                <div class="event-left">
+                    <h4>WHERE</h4>
+                    <div class="event-p">
+                        <p>THE BURROUGHES BUILDING</p>
+                        <p>QUEEN ST. W, TORONTO, ON</p>
+                        <p>M5V 2B7</p>
+                    </div>
                 </div>
-                <div class="student-image">
-                    <img :src="'images/'+ person.photoURL" alt="">
+                <div class="event-right">
+                    <h4>WHEN</h4>
+                    <div class="event-p">
+                        <p>APRIL 25TH 2017</p>
+                        <p>5PM - 8PM</p>
+                    </div>
                 </div>
-                <div class="student-info">
-                    <h1>{{ person.firstName }} {{ person.lastName }}</h1>
-                    <h3>{{ person.skillSet }}</h3>
-                    <p>{{ person.introduction }}</p>
-                    <div class="student-links">
-                        <a :href="person.portfolioLink" class="button" target="_blank">View Portfolio</a>
-                        <div class="social-links">
+            </div>
 
-                            <!--FIRST SOCIAL MEDIA ICON-->
+        </div>
+        <a id="map" class="map" href="https://goo.gl/maps/mUVFJZ6bnzv" target="_blank">
+            <img src="images/map.png" alt="">
+        </a>
+    </section>
+    <section data-role="section" id="squad">
+        <!-- Slider main container -->
+        <div class="swiper-container main-slider" id="people" v-cloak>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div v-for="person in items" class="swiper-slide main-slide">
+                    <div class="large-text-container">
+                        <h1 class="large-text">{{ person.firstName }} {{ person.lastName }}</h1>
+                    </div>
+                    <div class="student-image">
+                        <img :src="'images/'+ person.photoURL" alt="">
+                    </div>
+                    <div class="student-info">
+                        <h1>{{ person.firstName }} {{ person.lastName }}</h1>
+                        <h3>{{ person.skillSet }}</h3>
+                        <p>{{ person.introduction }}</p>
+                        <div class="student-links">
+                            <a :href="person.portfolioLink" class="button" target="_blank">View Portfolio</a>
+                            <div class="social-links">
 
-                            <a :href="person.linkedin" v-if="person.socialMedia1 == 'linkedin'" target="_blank">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
+                                <!--FIRST SOCIAL MEDIA ICON-->
 
-                            <a :href="person.codepen" v-if="person.socialMedia1 == 'codepen'" target="_blank">
-                                <i class="fa fa-codepen" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.linkedin" v-if="person.socialMedia1 == 'linkedin'" target="_blank">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.instagram" v-if="person.socialMedia1 == 'instagram'" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.codepen" v-if="person.socialMedia1 == 'codepen'" target="_blank">
+                                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.github" v-if="person.socialMedia1 == 'github'" target="_blank">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.instagram" v-if="person.socialMedia1 == 'instagram'" target="_blank">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.dribble" v-if="person.socialMedia1 == 'dribble'" target="_blank">
-                                <i class="fa fa-dribbble" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.github" v-if="person.socialMedia1 == 'github'" target="_blank">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.behance" v-if="person.socialMedia1 == 'behance'" target="_blank">
-                                <i class="fa fa-behance" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.dribble" v-if="person.socialMedia1 == 'dribble'" target="_blank">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.facebook" v-if="person.socialMedia1 == 'facebook'" target="_blank">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.behance" v-if="person.socialMedia1 == 'behance'" target="_blank">
+                                    <i class="fa fa-behance" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.twitter" v-if="person.socialMedia1 == 'twitter'" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.facebook" v-if="person.socialMedia1 == 'facebook'" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
 
-                            <!--SECOND SOCIAL MEDIA ICON-->
+                                <a :href="person.twitter" v-if="person.socialMedia1 == 'twitter'" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.linkedin" v-if="person.socialMedia2 == 'linkedin'" target="_blank">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
+                                <!--SECOND SOCIAL MEDIA ICON-->
 
-                            <a :href="person.codepen" v-if="person.socialMedia2 == 'codepen'" target="_blank">
-                                <i class="fa fa-codepen" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.linkedin" v-if="person.socialMedia2 == 'linkedin'" target="_blank">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.instagram" v-if="person.socialMedia2 == 'instagram'" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.codepen" v-if="person.socialMedia2 == 'codepen'" target="_blank">
+                                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.github" v-if="person.socialMedia2 == 'github'" target="_blank">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.instagram" v-if="person.socialMedia2 == 'instagram'" target="_blank">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.dribble" v-if="person.socialMedia2 == 'dribble'" target="_blank">
-                                <i class="fa fa-dribbble" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.github" v-if="person.socialMedia2 == 'github'" target="_blank">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.behance" v-if="person.socialMedia2 == 'behance'" target="_blank">
-                                <i class="fa fa-behance" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.dribble" v-if="person.socialMedia2 == 'dribble'" target="_blank">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.facebook" v-if="person.socialMedia2 == 'facebook'" target="_blank">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.behance" v-if="person.socialMedia2 == 'behance'" target="_blank">
+                                    <i class="fa fa-behance" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.twitter" v-if="person.socialMedia2 == 'twitter'" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.facebook" v-if="person.socialMedia2 == 'facebook'" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
 
-                            <!--THIRD SOCIAL MEDIA ICON-->
+                                <a :href="person.twitter" v-if="person.socialMedia2 == 'twitter'" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.linkedin" v-if="person.socialMedia3 == 'linkedin'" target="_blank">
-                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
+                                <!--THIRD SOCIAL MEDIA ICON-->
 
-                            <a :href="person.codepen" v-if="person.socialMedia3 == 'codepen'" target="_blank">
-                                <i class="fa fa-codepen" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.linkedin" v-if="person.socialMedia3 == 'linkedin'" target="_blank">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.instagram" v-if="person.socialMedia3 == 'instagram'" target="_blank">
-                                <i class="fa fa-instagram" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.codepen" v-if="person.socialMedia3 == 'codepen'" target="_blank">
+                                    <i class="fa fa-codepen" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.github" v-if="person.socialMedia3 == 'github'" target="_blank">
-                                <i class="fa fa-github" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.instagram" v-if="person.socialMedia3 == 'instagram'" target="_blank">
+                                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.dribble" v-if="person.socialMedia3 == 'dribble'" target="_blank">
-                                <i class="fa fa-dribbble" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.github" v-if="person.socialMedia3 == 'github'" target="_blank">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.behance" v-if="person.socialMedia3 == 'behance'" target="_blank">
-                                <i class="fa fa-behance" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.dribble" v-if="person.socialMedia3 == 'dribble'" target="_blank">
+                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.facebook" v-if="person.socialMedia3 == 'facebook'" target="_blank">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.behance" v-if="person.socialMedia3 == 'behance'" target="_blank">
+                                    <i class="fa fa-behance" aria-hidden="true"></i>
+                                </a>
 
-                            <a :href="person.twitter" v-if="person.socialMedia3 == 'twitter'" target="_blank">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
+                                <a :href="person.facebook" v-if="person.socialMedia3 == 'facebook'" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+
+                                <a :href="person.twitter" v-if="person.socialMedia3 == 'twitter'" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="thumbnails swiper-container">
-            <div class="swiper-wrapper">
-                <div v-for="person in items" class="thumbnail swiper-slide" :style="{ 'background-image': 'url(images/' + person.thumbnailPhotoURL + ')' }">
-                    <h6>{{ person.firstName }}</h6>
+            <div class="thumbnails swiper-container">
+                <div class="swiper-wrapper">
+                    <div v-for="person in items" class="thumbnail swiper-slide" :style="{ 'background-image': 'url(images/' + person.thumbnailPhotoURL + ')' }">
+                        <h6>{{ person.firstName }}</h6>
+                    </div>
                 </div>
             </div>
+
+            <!--            <div class="swiper-pagination"></div>-->
         </div>
+    </section>
 
-        <!--            <div class="swiper-pagination"></div>-->
-    </div>
-</section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFOXCZYCpBkNRnA3pkCXjlflftZAPwMH4&callback=initMap" async defer></script>-->
+    <script>
+        //        function initMap() {
+        //            var uluru = {
+        //                lat: 43.647233,
+        //                lng: -79.403389
+        //            };
+        //            var map = new google.maps.Map(document.getElementById('map'), {
+        //                zoom: 15,
+        //                center: uluru,
+        //                styles: [{
+        //                    "featureType": "administrative",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "saturation": "-100"
+        //                    }]
+        //                }, {
+        //                    "featureType": "administrative.province",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "visibility": "off"
+        //                    }]
+        //                }, {
+        //                    "featureType": "landscape",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "saturation": -100
+        //                    }, {
+        //                        "lightness": 65
+        //                    }, {
+        //                        "visibility": "on"
+        //                    }]
+        //                }, {
+        //                    "featureType": "poi",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "saturation": -100
+        //                    }, {
+        //                        "lightness": "50"
+        //                    }, {
+        //                        "visibility": "simplified"
+        //                    }]
+        //                }, {
+        //                    "featureType": "road",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "saturation": "-100"
+        //                    }]
+        //                }, {
+        //                    "featureType": "road.highway",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "visibility": "simplified"
+        //                    }]
+        //                }, {
+        //                    "featureType": "road.arterial",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "lightness": "30"
+        //                    }]
+        //                }, {
+        //                    "featureType": "road.local",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "lightness": "40"
+        //                    }]
+        //                }, {
+        //                    "featureType": "transit",
+        //                    "elementType": "all",
+        //                    "stylers": [{
+        //                        "saturation": -100
+        //                    }, {
+        //                        "visibility": "simplified"
+        //                    }]
+        //                }, {
+        //                    "featureType": "water",
+        //                    "elementType": "geometry",
+        //                    "stylers": [{
+        //                        "hue": "#ffff00"
+        //                    }, {
+        //                        "lightness": -25
+        //                    }, {
+        //                        "saturation": -97
+        //                    }]
+        //                }, {
+        //                    "featureType": "water",
+        //                    "elementType": "labels",
+        //                    "stylers": [{
+        //                        "lightness": -25
+        //                    }, {
+        //                        "saturation": -100
+        //                    }]
+        //                }]
+        //            });
+        //            var marker = new google.maps.Marker({
+        //                position: uluru,
+        //                map: map
+        //            });
+        //        }
+    </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFOXCZYCpBkNRnA3pkCXjlflftZAPwMH4&callback=initMap" async defer></script>-->
-<script>
-//        function initMap() {
-//            var uluru = {
-//                lat: 43.647233,
-//                lng: -79.403389
-//            };
-//            var map = new google.maps.Map(document.getElementById('map'), {
-//                zoom: 15,
-//                center: uluru,
-//                styles: [{
-//                    "featureType": "administrative",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "saturation": "-100"
-//                    }]
-//                }, {
-//                    "featureType": "administrative.province",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "visibility": "off"
-//                    }]
-//                }, {
-//                    "featureType": "landscape",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "saturation": -100
-//                    }, {
-//                        "lightness": 65
-//                    }, {
-//                        "visibility": "on"
-//                    }]
-//                }, {
-//                    "featureType": "poi",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "saturation": -100
-//                    }, {
-//                        "lightness": "50"
-//                    }, {
-//                        "visibility": "simplified"
-//                    }]
-//                }, {
-//                    "featureType": "road",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "saturation": "-100"
-//                    }]
-//                }, {
-//                    "featureType": "road.highway",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "visibility": "simplified"
-//                    }]
-//                }, {
-//                    "featureType": "road.arterial",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "lightness": "30"
-//                    }]
-//                }, {
-//                    "featureType": "road.local",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "lightness": "40"
-//                    }]
-//                }, {
-//                    "featureType": "transit",
-//                    "elementType": "all",
-//                    "stylers": [{
-//                        "saturation": -100
-//                    }, {
-//                        "visibility": "simplified"
-//                    }]
-//                }, {
-//                    "featureType": "water",
-//                    "elementType": "geometry",
-//                    "stylers": [{
-//                        "hue": "#ffff00"
-//                    }, {
-//                        "lightness": -25
-//                    }, {
-//                        "saturation": -97
-//                    }]
-//                }, {
-//                    "featureType": "water",
-//                    "elementType": "labels",
-//                    "stylers": [{
-//                        "lightness": -25
-//                    }, {
-//                        "saturation": -100
-//                    }]
-//                }]
-//            });
-//            var marker = new google.maps.Marker({
-//                position: uluru,
-//                map: map
-//            });
-//        }
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
-<script src="js/jquery.horizonScroll.js"></script>
-<script src="js/firebase.js"></script>
-<script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script src="js/jquery.horizonScroll.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 

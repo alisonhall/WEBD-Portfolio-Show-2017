@@ -317,22 +317,35 @@ section {
 #event {
     background: linear-gradient(rgba(30, 39, 86, 0.8), rgba(30, 39, 86, 0.8)), url("../images/burroughes.png") no-repeat center center fixed;
     background-size: cover;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-wrap: wrap;
     display: flex;
-    padding: 10% 0 0;
 }
 
 .event-top {
-    padding: 15%;
     width: 100%;
-    position: absolute;
-    top: 50px;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-top h3 {
+    width: 100%;
+    display: inline-block !important;
 }
 
 .event-top > div {
-    float: left;
+    width: 70%;
+}
+
+.event-container {
+    display:flex;
     margin-top: 50px;
+    flex-wrap: wrap
+}
+
+.event-container > div {
+    margin-top: 40px;
     width: 50%;
 }
 
@@ -343,14 +356,13 @@ section {
 }
 
 .map {
-    height: 30%;
+    height: 30vh;
     width: 100%;
     display: flex;
     z-index: 100;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    position: absolute;
     cursor: pointer;
 }
 

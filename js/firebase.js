@@ -40,29 +40,58 @@ var vm = new Vue({
 function initSlider() {
     console.log("Test")
     $('.swiper-container').css('opacity', '1')
-
     var firstSlide = Math.floor(Math.random() * 17)
-    var thumbnailSlider = new Swiper('.thumbnails', {
-        loop: true,
-        loopedSlides: 18,
-        initialSlide: firstSlide,
-        slidesOffsetBefore: 200,
-        slidesPerView: 'auto',
-        slideToClickedSlide: true,
-        speed: 1200,
-        freeMode: true,
-        freeModeSticky: true,
-        slideActiveClass: 'thumb-active',
+    var mq = window.matchMedia("(min-width: 900px)");
 
-    });
-    var mainSlider = new Swiper('.main-slider', {
-        // Optional parameters
-        loop: true,
-        loopedSlides: 18,
-        initialSlide: firstSlide,
-        keyboardControl: false,
-        speed: 1200,
-    })
+    if (mq.matches) {
+        // window width is at least 500px
+        var thumbnailSlider = new Swiper('.thumbnails', {
+            loop: true,
+            loopedSlides: 18,
+            initialSlide: firstSlide,
+            slidesOffsetBefore: 200,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            speed: 1200,
+            freeMode: true,
+            freeModeSticky: true,
+            slideActiveClass: 'thumb-active',
+
+        });
+        var mainSlider = new Swiper('.main-slider', {
+            // Optional parameters
+            loop: true,
+            loopedSlides: 18,
+            initialSlide: firstSlide,
+            keyboardControl: false,
+            speed: 1200,
+        })
+    } else {
+        // window width is less than 500px
+        var thumbnailSlider = new Swiper('.thumbnails', {
+            loop: true,
+            loopedSlides: 18,
+            initialSlide: firstSlide,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            slideToClickedSlide: true,
+            speed: 1200,
+            freeMode: true,
+            freeModeSticky: true,
+            slideActiveClass: 'thumb-active',
+
+        });
+        var mainSlider = new Swiper('.main-slider', {
+            // Optional parameters
+            loop: true,
+            loopedSlides: 18,
+            initialSlide: firstSlide,
+            keyboardControl: false,
+            speed: 1200,
+        })
+    }
+
+
 
 
     thumbnailSlider.params.control = mainSlider;
