@@ -162,6 +162,7 @@ section {
     align-items: flex-end;
     min-height: 70vh;
     perspective: 1000px;
+    pointer-events: none;
 }
 
 .top h1 {
@@ -690,10 +691,12 @@ section {
     .right .rsvp {
         padding: 10px 30px;
     }
+/*
     .wave {
         position: fixed;
         bottom: 0;
     }
+*/
     .student-info p,
     .event-p {
         margin-left: 0px;
