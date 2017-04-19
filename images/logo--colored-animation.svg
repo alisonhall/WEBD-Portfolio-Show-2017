@@ -46,6 +46,7 @@
       -webkit-animation: scale 2s cubic-bezier(.24,0,0,.99) 3.6s 1 both;
       -o-animation: scale 2s cubic-bezier(.24,0,0,.99) 3.6s 1 both;
       animation: scale 2s cubic-bezier(.24,0,0,.99) 3.6s 1 both;
+      overflow: hidden;
     }
 
     #Wrapper {
